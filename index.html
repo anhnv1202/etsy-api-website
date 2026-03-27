@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ListingHub</title>
+    <meta
+      name="description"
+      content="Internal Etsy seller operations tool for listings, inventory, order workflows, and API onboarding."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <header class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Etsy API Registration Website</p>
+          <h1>Make Your API Application Look Legit and Professional</h1>
+          <p>
+            This site presents your app purpose, policy pages, and setup flow in a way
+            reviewers can quickly understand. It also includes ready-to-use tools for
+            OAuth URL generation and app description copy.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-main" href="#tools">Open Setup Tools</a>
+            <a class="btn btn-ghost" href="privacy.html">Privacy Policy</a>
+            <a class="btn btn-ghost" href="terms.html">Terms of Use</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal delay-1">
+          <h2>What Etsy Review Wants to See</h2>
+          <ul>
+            <li>Clear internal-use purpose</li>
+            <li>No vague or risky data usage claims</li>
+            <li>Scope-minimized OAuth request</li>
+            <li>Public policy links and contact email</li>
+          </ul>
+          <p class="mini-note">Review mode: professional, specific, compliant.</p>
+        </aside>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="split reveal delay-2">
+        <article class="card card-strong">
+          <h2>Application Summary</h2>
+          <p>
+            ListingHub is a private internal system for one Etsy
+            shop. It is used to monitor listings, inventory, receipts, and operational
+            reporting. It is not a public marketplace app.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Internal Features</h2>
+          <ul>
+            <li>Listings and inventory monitoring dashboard</li>
+            <li>Order and receipt visibility for fulfillment workflows</li>
+            <li>Operational reporting and listing quality review</li>
+            <li>Rate-limit-aware API usage planning</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="tools" class="tool-grid reveal delay-3">
+        <article class="card tool">
+          <h2>App Description Copier</h2>
+          <p>Use this text for the Etsy "Describe your application" field.</p>
+          <textarea id="app-description" rows="8" aria-label="App Description"></textarea>
+          <div class="tool-actions">
+            <button id="copy-description" class="btn btn-main" type="button">Copy Description</button>
+            <span id="copy-status" class="status"></span>
+          </div>
+        </article>
+
+        <article class="card tool">
+          <h2>OAuth Authorize URL Builder</h2>
+          <div class="form-grid">
+            <label>
+              Etsy Keystring (client id)
+              <input id="etsy-key" type="text" placeholder="paste keystring" />
+            </label>
+            <label>
+              Redirect URI
+              <input id="redirect-uri" type="text" placeholder="https://your-domain.com/callback" />
+            </label>
+            <label>
+              State
+              <input id="oauth-state" type="text" placeholder="devstate123" />
+            </label>
+            <label>
+              PKCE Code Challenge
+              <input id="code-challenge" type="text" placeholder="S256 challenge value" />
+            </label>
+          </div>
+
+          <div class="scope-box">
+            <p>Scopes</p>
+            <div class="preset-actions">
+              <button id="preset-readonly" class="btn btn-ghost" type="button">Read-only Preset</button>
+              <button id="preset-sellerops" class="btn btn-ghost" type="button">Seller Ops Preset</button>
+            </div>
+            <div class="scope-grid">
+              <label><input type="checkbox" name="scope" value="shops_r" /> shops_r</label>
+              <label><input type="checkbox" name="scope" value="shops_w" /> shops_w</label>
+              <label><input type="checkbox" name="scope" value="listings_r" /> listings_r</label>
+              <label><input type="checkbox" name="scope" value="listings_w" /> listings_w</label>
+              <label><input type="checkbox" name="scope" value="transactions_r" /> transactions_r</label>
+            </div>
+          </div>
+
+          <div class="tool-actions">
+            <button id="build-oauth-url" class="btn btn-main" type="button">Build URL</button>
+            <button id="copy-oauth-url" class="btn btn-ghost" type="button">Copy URL</button>
+          </div>
+
+          <textarea id="oauth-result" rows="4" aria-label="OAuth URL output"></textarea>
+          <p id="oauth-copy-status" class="status"></p>
+        </article>
+      </section>
+
+      <section class="card reveal delay-4">
+        <h2>Compliance Note</h2>
+        <p>
+          Keep your Website URL, app description, and policy pages consistent. Use
+          internal-use language and request only minimum scopes in the first review.
+        </p>
+        <p class="contact">
+          Contact email: <a href="mailto:nva.shinki@gmail.com">nva.shinki@gmail.com</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <p>© 2026 Shinki Seller Operations Tool</p>
+        <p><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
